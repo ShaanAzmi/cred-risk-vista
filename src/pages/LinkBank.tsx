@@ -60,27 +60,27 @@ const LinkBank = () => {
             <div className="space-y-4">
               <div className="p-4 border border-border rounded-lg flex items-center gap-4 hover:bg-accent cursor-pointer transition-colors">
                 <div className="h-10 w-10 bg-blue-600 rounded-md flex items-center justify-center text-white font-bold">
-                  C
+                  H
                 </div>
                 <div>
                   <div className="font-medium">HDFC Bank</div>
-                  <div className="text-sm text-cred-silver">Connect your HDFC account</div>
+                  <div className="text-sm text-cred-silver">Connect your HDFC Bank account</div>
                 </div>
               </div>
 
               <div className="p-4 border border-border rounded-lg flex items-center gap-4 hover:bg-accent cursor-pointer transition-colors">
                 <div className="h-10 w-10 bg-red-600 rounded-md flex items-center justify-center text-white font-bold">
-                  B
+                  S
                 </div>
                 <div>
                   <div className="font-medium">SBI Bank</div>
-                  <div className="text-sm text-cred-silver">Connect your SBI Bank account</div>
+                  <div className="text-sm text-cred-silver">Connect your SBI account</div>
                 </div>
               </div>
 
               <div className="p-4 border border-border rounded-lg flex items-center gap-4 hover:bg-accent cursor-pointer transition-colors">
-                <div className="h-10 w-10 bg-gray-600 rounded-md flex items-center justify-center text-white font-bold">
-                  W
+                <div className="h-10 w-10 bg-purple-600 rounded-md flex items-center justify-center text-white font-bold">
+                  A
                 </div>
                 <div>
                   <div className="font-medium">Axis Bank</div>

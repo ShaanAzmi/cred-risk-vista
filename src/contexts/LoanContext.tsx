@@ -1,4 +1,3 @@
-
 import { createContext, useContext, useState, ReactNode } from "react";
 
 // Define loan types
@@ -28,7 +27,7 @@ const mockLoans: Loan[] = [
     type: "Auto Loan",
     amount: 25000,
     interestRate: 4.5,
-    duration: 60, // months
+    duration: 60,
     dueDate: "2028-05-15",
     status: "active",
   },
@@ -37,7 +36,7 @@ const mockLoans: Loan[] = [
     type: "Personal Loan",
     amount: 10000,
     interestRate: 7.2,
-    duration: 36, // months
+    duration: 36,
     dueDate: "2026-10-22",
     status: "active",
   },
@@ -46,7 +45,7 @@ const mockLoans: Loan[] = [
     type: "Mortgage",
     amount: 250000,
     interestRate: 3.8,
-    duration: 360, // months
+    duration: 360,
     dueDate: "2052-03-10",
     status: "active",
   },
@@ -55,10 +54,19 @@ const mockLoans: Loan[] = [
     type: "Credit Card",
     amount: 3500,
     interestRate: 18.99,
-    duration: 12, // months
+    duration: 12,
     dueDate: "2025-01-18",
     status: "active",
   },
+  {
+    id: "loan-5",
+    type: "Personal Loan",
+    amount: 15000,
+    interestRate: 8.5,
+    duration: 24,
+    dueDate: "2024-01-15",
+    status: "paid",
+  }
 ];
 
 const LoanContext = createContext<LoanContextType | null>(null);

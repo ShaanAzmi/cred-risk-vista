@@ -1,10 +1,10 @@
-
 import { AppLayout } from "@/components/AppLayout";
 import { useLoan } from "@/contexts/LoanContext";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { AlertCircle, CreditCard, TrendingUp } from "lucide-react";
+import { CreditCards } from "@/components/CreditCards";
 
 const Dashboard = () => {
   const { loans, totalLoanAmount, creditRiskLevel, creditRiskScore } = useLoan();
@@ -117,6 +117,11 @@ const Dashboard = () => {
             </div>
           </CardContent>
         </Card>
+      </div>
+
+      {/* Credit Cards Section */}
+      <div className="mb-6">
+        <CreditCards />
       </div>
 
       {/* Loans Section */}
