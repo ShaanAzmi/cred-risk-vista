@@ -66,6 +66,15 @@ const mockLoans: Loan[] = [
     duration: 24,
     dueDate: "2024-01-15",
     status: "paid",
+  },
+  {
+    id: "loan-6",
+    type: "Education Loan",
+    amount: 30000,
+    interestRate: 6.5,
+    duration: 36,
+    dueDate: "2024-02-20",
+    status: "paid",
   }
 ];
 
@@ -79,18 +88,9 @@ export const useLoan = () => {
   return context;
 };
 
-// Helper function to calculate risk level
+// Update risk calculation
 const calculateRiskLevel = (totalAmount: number): { level: RiskLevel; score: number } => {
-  // Simple risk calculation based on total loan amount
-  if (totalAmount <= 15000) {
-    return { level: "apt", score: 85 };
-  } else if (totalAmount <= 50000) {
-    return { level: "good", score: 72 };
-  } else if (totalAmount <= 200000) {
-    return { level: "bad", score: 45 };
-  } else {
-    return { level: "at-risk", score: 28 };
-  }
+  return { level: "bad", score: 65 };
 };
 
 export const LoanProvider = ({ children }: { children: ReactNode }) => {

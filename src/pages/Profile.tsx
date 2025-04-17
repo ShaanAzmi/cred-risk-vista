@@ -1,4 +1,3 @@
-
 import { AppLayout } from "@/components/AppLayout";
 import { Card } from "@/components/ui/card";
 import { useAuth } from "@/contexts/AuthContext";
@@ -86,11 +85,20 @@ const Profile = () => {
         <Card className="dashboard-card">
           <div className="p-6">
             <h3 className="text-lg font-semibold mb-4">Verification Status</h3>
-            <div className="flex items-center gap-3 border border-green-500/20 rounded-lg p-3 bg-green-500/5">
-              <ShieldCheck className="h-5 w-5 text-green-500" />
-              <div>
-                <p className="font-medium">Aadhar Card Verified</p>
-                <p className="text-sm text-cred-silver">Your identity has been verified</p>
+            <div className="space-y-3">
+              <div className="flex items-center gap-3 border border-green-500/20 rounded-lg p-3 bg-green-500/5">
+                <ShieldCheck className="h-5 w-5 text-green-500" />
+                <div>
+                  <p className="font-medium">Aadhar Card Verified</p>
+                  <p className="text-sm text-cred-silver">Your identity has been verified</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-3 border border-green-500/20 rounded-lg p-3 bg-green-500/5">
+                <ShieldCheck className="h-5 w-5 text-green-500" />
+                <div>
+                  <p className="font-medium">PAN Card Verified</p>
+                  <p className="text-sm text-cred-silver">Your tax information has been verified</p>
+                </div>
               </div>
             </div>
           </div>
