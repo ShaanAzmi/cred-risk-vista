@@ -63,8 +63,8 @@ const LinkBank = () => {
                   C
                 </div>
                 <div>
-                  <div className="font-medium">Chase Bank</div>
-                  <div className="text-sm text-cred-silver">Connect your Chase account</div>
+                  <div className="font-medium">HDFC Bank</div>
+                  <div className="text-sm text-cred-silver">Connect your HDFC account</div>
                 </div>
               </div>
               
@@ -73,8 +73,8 @@ const LinkBank = () => {
                   B
                 </div>
                 <div>
-                  <div className="font-medium">Bank of America</div>
-                  <div className="text-sm text-cred-silver">Connect your BoA account</div>
+                  <div className="font-medium">SBI Bank</div>
+                  <div className="text-sm text-cred-silver">Connect your SBI Bank account</div>
                 </div>
               </div>
               
@@ -83,8 +83,8 @@ const LinkBank = () => {
                   W
                 </div>
                 <div>
-                  <div className="font-medium">Wells Fargo</div>
-                  <div className="text-sm text-cred-silver">Connect your Wells Fargo account</div>
+                  <div className="font-medium">Axis Bank</div>
+                  <div className="text-sm text-cred-silver">Connect your Axis Bank account</div>
                 </div>
               </div>
             </div>
