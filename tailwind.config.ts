@@ -67,6 +67,7 @@ export default {
 				cred: {
 					black: "#000000",
 					yellow: "#FFC107",
+					"light-yellow": "#FFF8E1",
 					silver: "#C0C0C0",
 					"light-gray": "#E5E5E5",
 					"dark-gray": "#333333",

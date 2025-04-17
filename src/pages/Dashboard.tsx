@@ -60,8 +60,8 @@ const Dashboard = () => {
   return (
     <AppLayout>
       <div className="mb-6">
-        <h1 className="text-3xl font-bold mb-2">Dashboard</h1>
-        <p className="text-cred-silver">
+        <h1 className="text-3xl font-bold mb-2 text-cred-yellow">Dashboard</h1>
+        <p className="text-cred-silver text-sm">
           View your loan details and credit risk assessment
         </p>
       </div>
@@ -70,12 +70,12 @@ const Dashboard = () => {
         {/* Total Loan Amount */}
         <Card className="dashboard-card">
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium text-cred-silver">
+            <CardTitle className="text-sm font-medium text-cred-yellow">
               Total Loan Amount
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{formatCurrency(totalLoanAmount)}</div>
+            <div className="text-2xl font-bold text-white">{formatCurrency(totalLoanAmount)}</div>
             <div className="text-xs text-cred-silver mt-1">
               Across {loans.length} active loans
             </div>
@@ -85,19 +85,19 @@ const Dashboard = () => {
         {/* Credit Risk Score */}
         <Card className="dashboard-card">
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium text-cred-silver">
+            <CardTitle className="text-sm font-medium text-cred-yellow">
               Credit Risk Score
             </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="flex items-center gap-2">
-              <div className="text-2xl font-bold">{creditRiskScore}</div>
+              <div className="text-2xl font-bold text-white">{creditRiskScore}</div>
               <div className={`risk-dot ${riskData.color}`}></div>
               <div className="text-sm">{riskData.label}</div>
             </div>
-            <Progress 
-              value={creditRiskScore} 
-              className="h-2 mt-3" 
+            <Progress
+              value={creditRiskScore}
+              className="h-2 mt-3"
               indicatorClassName={riskData.color}
             />
           </CardContent>
@@ -106,7 +106,7 @@ const Dashboard = () => {
         {/* Risk Assessment */}
         <Card className="dashboard-card">
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium text-cred-silver">
+            <CardTitle className="text-sm font-medium text-cred-yellow">
               Risk Assessment
             </CardTitle>
           </CardHeader>
@@ -129,16 +129,16 @@ const Dashboard = () => {
         </CardHeader>
         <CardContent>
           <Tabs defaultValue="all" className="w-full">
-            <TabsList className="bg-black/30 mb-6">
+            <TabsList className="bg-black mb-6 border-b border-cred-yellow/30">
               <TabsTrigger value="all">All Loans</TabsTrigger>
               <TabsTrigger value="active">Active</TabsTrigger>
               <TabsTrigger value="paid">Paid</TabsTrigger>
             </TabsList>
-            
+
             <TabsContent value="all" className="mt-0">
-              <div className="rounded-md border border-cred-silver/20 overflow-hidden">
+              <div className="rounded-md border border-cred-yellow/20 overflow-hidden">
                 <table className="w-full">
-                  <thead className="bg-black/40">
+                  <thead className="bg-black border-b border-cred-yellow/30">
                     <tr>
                       <th className="text-left p-3 text-sm font-medium text-cred-silver">Type</th>
                       <th className="text-left p-3 text-sm font-medium text-cred-silver">Amount</th>
@@ -150,7 +150,7 @@ const Dashboard = () => {
                   </thead>
                   <tbody>
                     {loans.map((loan) => (
-                      <tr key={loan.id} className="border-t border-cred-silver/10 hover:bg-black/30">
+                      <tr key={loan.id} className="border-t border-cred-silver/10 hover:bg-black hover:border-cred-yellow">
                         <td className="p-3">{loan.type}</td>
                         <td className="p-3">{formatCurrency(loan.amount)}</td>
                         <td className="p-3 hidden md:table-cell">{loan.interestRate}%</td>
@@ -168,12 +168,12 @@ const Dashboard = () => {
                 </table>
               </div>
             </TabsContent>
-            
+
             <TabsContent value="active" className="mt-0">
-              <div className="rounded-md border border-cred-silver/20 overflow-hidden">
+              <div className="rounded-md border border-cred-yellow/20 overflow-hidden">
                 <table className="w-full">
                   {/* Similar table structure as "all" tab but filtered for active loans */}
-                  <thead className="bg-black/40">
+                  <thead className="bg-black border-b border-cred-yellow/30">
                     <tr>
                       <th className="text-left p-3 text-sm font-medium text-cred-silver">Type</th>
                       <th className="text-left p-3 text-sm font-medium text-cred-silver">Amount</th>
@@ -186,7 +186,7 @@ const Dashboard = () => {
                     {loans
                       .filter(loan => loan.status === "active")
                       .map((loan) => (
-                        <tr key={loan.id} className="border-t border-cred-silver/10 hover:bg-black/30">
+                        <tr key={loan.id} className="border-t border-cred-silver/10 hover:bg-black hover:border-cred-yellow">
                           <td className="p-3">{loan.type}</td>
                           <td className="p-3">{formatCurrency(loan.amount)}</td>
                           <td className="p-3 hidden md:table-cell">{loan.interestRate}%</td>
@@ -199,7 +199,7 @@ const Dashboard = () => {
                 </table>
               </div>
             </TabsContent>
-            
+
             <TabsContent value="paid" className="mt-0">
               <div className="flex items-center justify-center p-8 border border-dashed border-cred-silver/20 rounded-md">
                 <div className="text-center">

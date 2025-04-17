@@ -29,11 +29,11 @@ const LinkBank = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-black p-4">
-      <Card className="w-full max-w-md p-8 bg-cred-dark-gray border-cred-silver/20">
+    <div className="min-h-screen flex items-center justify-center bg-background p-4">
+      <Card className="w-full max-w-md p-8 bg-card border-border">
         <div className="flex flex-col items-center space-y-2 mb-8">
           <Link className="h-12 w-12 text-cred-yellow mb-2" />
-          <h1 className="text-2xl font-bold text-white text-center">
+          <h1 className="text-2xl font-bold text-foreground text-center">
             Link Your Bank Account
           </h1>
           <p className="text-cred-silver text-sm text-center">
@@ -58,7 +58,7 @@ const LinkBank = () => {
         ) : (
           <div className="space-y-6">
             <div className="space-y-4">
-              <div className="p-4 border border-cred-silver/20 rounded-lg flex items-center gap-4 hover:bg-black/50 cursor-pointer transition-colors">
+              <div className="p-4 border border-border rounded-lg flex items-center gap-4 hover:bg-accent cursor-pointer transition-colors">
                 <div className="h-10 w-10 bg-blue-600 rounded-md flex items-center justify-center text-white font-bold">
                   C
                 </div>
@@ -67,8 +67,8 @@ const LinkBank = () => {
                   <div className="text-sm text-cred-silver">Connect your HDFC account</div>
                 </div>
               </div>
-              
-              <div className="p-4 border border-cred-silver/20 rounded-lg flex items-center gap-4 hover:bg-black/50 cursor-pointer transition-colors">
+
+              <div className="p-4 border border-border rounded-lg flex items-center gap-4 hover:bg-accent cursor-pointer transition-colors">
                 <div className="h-10 w-10 bg-red-600 rounded-md flex items-center justify-center text-white font-bold">
                   B
                 </div>
@@ -77,8 +77,8 @@ const LinkBank = () => {
                   <div className="text-sm text-cred-silver">Connect your SBI Bank account</div>
                 </div>
               </div>
-              
-              <div className="p-4 border border-cred-silver/20 rounded-lg flex items-center gap-4 hover:bg-black/50 cursor-pointer transition-colors">
+
+              <div className="p-4 border border-border rounded-lg flex items-center gap-4 hover:bg-accent cursor-pointer transition-colors">
                 <div className="h-10 w-10 bg-gray-600 rounded-md flex items-center justify-center text-white font-bold">
                   W
                 </div>
@@ -89,13 +89,13 @@ const LinkBank = () => {
               </div>
             </div>
 
-            <Button 
+            <Button
               onClick={handleLinkBank}
               className="w-full bg-cred-yellow hover:bg-cred-yellow/90 text-black font-medium"
             >
               Connect Bank Account
             </Button>
-            
+
             <p className="text-center text-xs text-cred-silver">
               Your banking information is encrypted and secure. We use bank-level security measures to protect your data.
             </p>

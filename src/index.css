@@ -5,33 +5,33 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 10%;
+    --background: 0 0% 7%;
+    --foreground: 0 0% 75%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 10%;
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 75%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 10%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 75%;
 
     --primary: 45 100% 52%;
     --primary-foreground: 0 0% 10%;
 
-    --secondary: 0 0% 75%;
-    --secondary-foreground: 0 0% 10%;
+    --secondary: 0 0% 25%;
+    --secondary-foreground: 0 0% 75%;
 
-    --muted: 0 0% 90%;
-    --muted-foreground: 0 0% 45%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
 
-    --accent: 0 0% 96%;
-    --accent-foreground: 0 0% 10%;
+    --accent: 0 0% 20%;
+    --accent-foreground: 0 0% 75%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 80%;
-    --input: 0 0% 80%;
-    --ring: 0 0% 80%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 45 100% 52%;
 
     --radius: 0.5rem;
   }
@@ -39,9 +39,9 @@
   * {
     @apply border-border;
   }
-  
+
   body {
-    @apply bg-black text-white;
+    @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
@@ -50,26 +50,26 @@
 @layer components {
   /* Dashboard card styles */
   .dashboard-card {
-    @apply bg-cred-dark-gray rounded-lg p-6 border border-cred-silver/20 shadow-lg hover:shadow-xl transition-shadow;
+    @apply bg-black rounded-lg p-6 border border-cred-yellow/30 shadow-lg hover:shadow-xl transition-all hover:border-cred-yellow;
   }
-  
+
   /* Credit risk indicator */
   .risk-dot {
     @apply w-3 h-3 rounded-full inline-block mr-2;
   }
-  
+
   .risk-apt {
     @apply bg-green-400;
   }
-  
+
   .risk-good {
     @apply bg-cred-yellow;
   }
-  
+
   .risk-bad {
     @apply bg-orange-500;
   }
-  
+
   .risk-risk {
     @apply bg-red-500;
   }
