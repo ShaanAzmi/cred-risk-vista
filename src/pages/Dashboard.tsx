@@ -30,15 +30,15 @@ const Dashboard = () => {
         };
       case "good":
         return {
-          color: "bg-cred-yellow",
+          color: "bg-blue-400",
           label: "Good",
           description: "Your credit risk is manageable. You're in good standing."
         };
-      case "bad":
+      case "moderate":
         return {
-          color: "bg-orange-500",
-          label: "Bad",
-          description: "Your credit risk is high. Consider reducing your loan amount."
+          color: "bg-yellow-400",
+          label: "Moderate",
+          description: "Your credit risk is moderate. Consider reviewing your loan portfolio."
         };
       case "at-risk":
         return {
@@ -112,7 +112,7 @@ const Dashboard = () => {
           </CardHeader>
           <CardContent>
             <div className="flex items-start gap-2">
-              <AlertCircle className={`h-5 w-5 mt-0.5 ${creditRiskLevel === "apt" || creditRiskLevel === "good" ? "text-green-400" : "text-orange-500"}`} />
+              <AlertCircle className={`h-5 w-5 mt-0.5 ${creditRiskLevel === "moderate" ? "text-yellow-400" : "text-green-400"}`} />
               <div className="text-sm">{riskData.description}</div>
             </div>
           </CardContent>
@@ -177,7 +177,6 @@ const Dashboard = () => {
             <TabsContent value="active" className="mt-0">
               <div className="rounded-md border border-cred-yellow/20 overflow-hidden">
                 <table className="w-full">
-                  {/* Similar table structure as "all" tab but filtered for active loans */}
                   <thead className="bg-black border-b border-cred-yellow/30">
                     <tr>
                       <th className="text-left p-3 text-sm font-medium text-cred-silver">Type</th>
@@ -206,11 +205,32 @@ const Dashboard = () => {
             </TabsContent>
 
             <TabsContent value="paid" className="mt-0">
-              <div className="flex items-center justify-center p-8 border border-dashed border-cred-silver/20 rounded-md">
-                <div className="text-center">
-                  <TrendingUp className="h-12 w-12 text-cred-silver/50 mx-auto mb-4" />
-                  <p className="text-cred-silver">No paid loans yet</p>
-                </div>
+              <div className="rounded-md border border-cred-yellow/20 overflow-hidden">
+                <table className="w-full">
+                  <thead className="bg-black border-b border-cred-yellow/30">
+                    <tr>
+                      <th className="text-left p-3 text-sm font-medium text-cred-silver">Type</th>
+                      <th className="text-left p-3 text-sm font-medium text-cred-silver">Amount</th>
+                      <th className="text-left p-3 text-sm font-medium text-cred-silver hidden md:table-cell">Interest Rate</th>
+                      <th className="text-left p-3 text-sm font-medium text-cred-silver hidden md:table-cell">Duration</th>
+                      <th className="text-left p-3 text-sm font-medium text-cred-silver">Due Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {loans
+                      .filter(loan => loan.status === "paid")
+                      .map((loan) => (
+                        <tr key={loan.id} className="border-t border-cred-silver/10 hover:bg-black hover:border-cred-yellow">
+                          <td className="p-3">{loan.type}</td>
+                          <td className="p-3">{formatCurrency(loan.amount)}</td>
+                          <td className="p-3 hidden md:table-cell">{loan.interestRate}%</td>
+                          <td className="p-3 hidden md:table-cell">{loan.duration} months</td>
+                          <td className="p-3">{new Date(loan.dueDate).toLocaleDateString()}</td>
+                        </tr>
+                      ))
+                    }
+                  </tbody>
+                </table>
               </div>
             </TabsContent>
           </Tabs>
