@@ -11,7 +11,7 @@ export interface Loan {
   status: "active" | "paid" | "overdue";
 }
 
-export type RiskLevel = "apt" | "good" | "bad" | "at-risk";
+export type RiskLevel = "apt" | "good" | "moderate" | "at-risk";
 
 interface LoanContextType {
   loans: Loan[];
@@ -90,7 +90,7 @@ export const useLoan = () => {
 
 // Update risk calculation
 const calculateRiskLevel = (totalAmount: number): { level: RiskLevel; score: number } => {
-  return { level: "bad", score: 65 };
+  return { level: "moderate", score: 65 };
 };
 
 export const LoanProvider = ({ children }: { children: ReactNode }) => {
